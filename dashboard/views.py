@@ -8,6 +8,9 @@ from pivottablejs import pivot_ui
 from IPython.lib.display import IFrame
 from IPython.display import HTML
 
+
+
+
 def analytic_file(request):
     if request.method == 'POST':
         form = FileUploadForm(request.POST, request.FILES)
@@ -27,7 +30,7 @@ def analytic_file(request):
             pivot_data = pivot_ui(df)
             
 
-            with open(r'D:\keval\study\Projects\Django\Dashboard\analytic_dashboard\pivottablejs.html','r') as fp:
+            with open(r'pivottablejs.html','r') as fp:
                 store = fp.read()
 
             with open(r'dashboard\templates\dashboard.html','w') as f:
